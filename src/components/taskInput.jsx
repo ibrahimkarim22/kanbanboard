@@ -4,7 +4,7 @@ const TaskInput = ({ addToTasks }) => {
   const [task, setTask] = useState('');
 
   const handleAddTask = () => {
-    if (task.trim === '') return;
+    if (task.trim() === '') return;
     addToTasks(task);
     setTask('');
   }

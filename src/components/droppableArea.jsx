@@ -1,16 +1,14 @@
-const DroppableArea = ({ title, tasks, setTasks, moveTask, fromListName }) => {
+const DroppableArea = ({ title, tasks, updateList, moveTask }) => {
   const handleDragStart = (e, task) => {
-    e.dataTransfer.setData('task', task);
-    e.dataTransfer.setData('fromList', fromListName);
+    e.dataTransfer.setData('task', task); 
   };
 
   const handleDrop = (e) => {
     e.preventDefault();
-    const droppedTask = e.dataTransfer.getData('task');
-    const fromList = e.dataTransfer.getData('fromList');
+    const task = e.dataTransfer.getData('task'); 
 
-    if (!tasks.includes(droppedTask)) {
-      moveTask(droppedTask, fromList, setTasks);
+    if (!tasks.includes(task)) { 
+      moveTask(task, updateList); 
     }
   };
 

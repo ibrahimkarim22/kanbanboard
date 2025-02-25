@@ -1,9 +1,8 @@
-import './css/app.css'
+import './css/app.css';
 import { useState } from 'react';
 
 import TaskInput from './components/taskInput';
 import DroppableArea from './components/droppableArea';
-
 
 function App() {
   const [tasks, setTasks] = useState([]);
@@ -15,12 +14,12 @@ function App() {
     setTasks((prevTasks) => [...prevTasks, task]);
   };
 
-  const moveTask = (task, fromListName, toListSetter) => {
+  const moveTask = (task, updateList) => {
     setTasks((prev) => prev.filter((t) => t !== task));
     setInProgressTasks((prev) => prev.filter((t) => t !== task));
     setCompletedTasks((prev) => prev.filter((t) => t !== task));
 
-    toListSetter((prev) => [...prev, task]);
+    updateList((prev) => [...prev, task]);
   };
 
   return (
@@ -30,23 +29,20 @@ function App() {
         <DroppableArea
           title='To Do'
           tasks={tasks}
-          setTasks={setTasks}
+          updateList={setTasks}  
           moveTask={moveTask}
-          fromListName='tasks'
         />
         <DroppableArea
           title='In Progress'
           tasks={inProgressTasks}
-          setTasks={setInProgressTasks}
+          updateList={setInProgressTasks}  
           moveTask={moveTask}
-          fromListName='inProgressTasks'
         />
         <DroppableArea
           title='Completed'
           tasks={completedTasks}
-          setTasks={setCompletedTasks}
+          updateList={setCompletedTasks}
           moveTask={moveTask}
-          fromListName='completedTasks'
         />
       </div>
     </>
