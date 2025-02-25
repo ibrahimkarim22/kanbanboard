@@ -1,7 +1,7 @@
-import { useState } from "react";
+import { useState } from 'react';
 
 const TaskInput = ({ addToTasks }) => {
-  const [task, setTask] = useState("");
+  const [task, setTask] = useState('');
 
   const handleAddTask = () => {
     if (task.trim === '') return;
@@ -13,8 +13,8 @@ const TaskInput = ({ addToTasks }) => {
     <>
       <label>
         <input
-          type="text"
-          placeholder="TYPE TASK HERE..."
+          type='text'
+          placeholder='TYPE TASK HERE...'
           value={task}
           onChange={(e) => setTask(e.target.value)}
         />

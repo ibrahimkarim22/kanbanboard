@@ -1,0 +1,28 @@
+/*app.jsx*/
+
+.droppable-areas-container {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+
+/*droppable.jsx*/
+
+.droppable-container {
+    width: 200px;
+    min-height: 300px;
+    border: 2px dashed gray;
+    padding: 10px;
+    text-align: center;
+}
+
+.droppable-item {
+    margin: 10px;
+    padding: 10px;
+    background-color: lightblue;
+    cursor: grab;
+    border-radius: 5px;
+}
