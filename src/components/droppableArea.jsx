@@ -1,4 +1,8 @@
-const DroppableArea = ({ title, tasks, updateList, moveTask }) => {
+
+
+const DroppableArea = ({ title, tasks, updateList, moveTask, deleteTask }) => {
+
+
   const handleDragStart = (e, task) => {
     e.dataTransfer.setData('task', task); 
   };
@@ -31,8 +35,10 @@ const DroppableArea = ({ title, tasks, updateList, moveTask }) => {
           onDragStart={(e) => handleDragStart(e, task)}
         >
           {task}
+          <button className='delete-button' onClick={() => deleteTask(task)}>X</button>
         </div>
       ))}
+
     </div>
   );
 };

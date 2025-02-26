@@ -22,27 +22,36 @@ function App() {
     updateList((prev) => [...prev, task]);
   };
 
+  const deleteTask = (task) => {
+    setTasks((prev) => prev.filter((t) => t !== task));
+    setInProgressTasks((prev) => prev.filter((t) => t !== task));
+    setCompletedTasks((prev) => prev.filter((t) => t !== task));
+  }
+
   return (
     <>
-      <TaskInput addToTasks={addToTasks} />
       <div className='droppable-areas-container'>
+      <TaskInput addToTasks={addToTasks} />
         <DroppableArea
           title='To Do'
           tasks={tasks}
           updateList={setTasks}  
           moveTask={moveTask}
+          deleteTask={deleteTask}
         />
         <DroppableArea
           title='In Progress'
           tasks={inProgressTasks}
           updateList={setInProgressTasks}  
           moveTask={moveTask}
+          deleteTask={deleteTask}
         />
         <DroppableArea
           title='Completed'
           tasks={completedTasks}
           updateList={setCompletedTasks}
           moveTask={moveTask}
+          deleteTask={deleteTask}
         />
       </div>
     </>

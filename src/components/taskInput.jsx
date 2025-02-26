@@ -1,25 +1,30 @@
-import { useState } from 'react';
+import { useState } from "react";
 
 const TaskInput = ({ addToTasks }) => {
-  const [task, setTask] = useState('');
+  const [task, setTask] = useState("");
 
   const handleAddTask = () => {
-    if (task.trim() === '') return;
+    if (task.trim() === "") return;
     addToTasks(task);
-    setTask('');
-  }
+    setTask("");
+  };
 
   return (
     <>
-      <label>
+    <div className='task-input-container'>
+      <div >
         <input
+        className='task-input'
           type='text'
           placeholder='TYPE TASK HERE...'
           value={task}
           onChange={(e) => setTask(e.target.value)}
         />
-      </label>
-      <button onClick={handleAddTask}>Add Task</button>
+      </div>
+      <div >
+        <button className='add-task-button' onClick={handleAddTask}>Add Task</button>
+      </div>
+      </div>
     </>
   );
 };
