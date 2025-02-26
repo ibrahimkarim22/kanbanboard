@@ -1,6 +1,6 @@
 
 
-const DroppableArea = ({ title, tasks, updateList, moveTask, deleteTask }) => {
+const DroppableArea = ({ title, tasks, updateList, moveTask, deleteTask, isLight }) => {
 
 
   const handleDragStart = (e, task) => {
@@ -22,7 +22,7 @@ const DroppableArea = ({ title, tasks, updateList, moveTask, deleteTask }) => {
 
   return (
     <div
-      className='droppable-container'
+      className={isLight ? 'droppable-container-dark' : 'droppable-container-light'}
       onDrop={handleDrop}
       onDragOver={handleDragOver}
     >
@@ -35,6 +35,7 @@ const DroppableArea = ({ title, tasks, updateList, moveTask, deleteTask }) => {
           onDragStart={(e) => handleDragStart(e, task)}
         >
           {task}
+          
           <button className='delete-button' onClick={() => deleteTask(task)}>X</button>
         </div>
       ))}

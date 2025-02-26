@@ -4,10 +4,12 @@ import { useState } from 'react';
 import TaskInput from './components/taskInput';
 import DroppableArea from './components/droppableArea';
 
+
 function App() {
   const [tasks, setTasks] = useState([]);
   const [inProgressTasks, setInProgressTasks] = useState([]);
   const [completedTasks, setCompletedTasks] = useState([]);
+  const [isLight, setIsLight] = useState(false);
 
   const addToTasks = (task) => {
     if (tasks.includes(task) || task.trim() === "") return;
@@ -28,16 +30,30 @@ function App() {
     setCompletedTasks((prev) => prev.filter((t) => t !== task));
   }
 
+  const toggleTheme = () => {
+    if (isLight) {
+      document.body.style.backgroundColor = "white";
+    } else {
+      document.body.style.backgroundColor = "black";
+    }
+    setIsLight(!isLight);
+  };
+
   return (
     <>
       <div className='droppable-areas-container'>
-      <TaskInput addToTasks={addToTasks} />
+      <TaskInput 
+        addToTasks={addToTasks} 
+        setIsLight={toggleTheme}
+        isLight={isLight}
+        />
         <DroppableArea
           title='To Do'
           tasks={tasks}
           updateList={setTasks}  
           moveTask={moveTask}
           deleteTask={deleteTask}
+          isLight={isLight}
         />
         <DroppableArea
           title='In Progress'
@@ -45,6 +61,7 @@ function App() {
           updateList={setInProgressTasks}  
           moveTask={moveTask}
           deleteTask={deleteTask}
+          isLight={isLight}
         />
         <DroppableArea
           title='Completed'
@@ -52,6 +69,7 @@ function App() {
           updateList={setCompletedTasks}
           moveTask={moveTask}
           deleteTask={deleteTask}
+          isLight={isLight}
         />
       </div>
     </>

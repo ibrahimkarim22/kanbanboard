@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const TaskInput = ({ addToTasks }) => {
+const TaskInput = ({ addToTasks, setIsLight, isLight }) => {
   const [task, setTask] = useState("");
 
   const handleAddTask = () => {
@@ -24,6 +24,14 @@ const TaskInput = ({ addToTasks }) => {
       <div >
         <button className='add-task-button' onClick={handleAddTask}>Add Task</button>
       </div>
+      {isLight ? (
+        
+        <i onClick={() => setIsLight()} class="fa-solid fa-toggle-off toggle-button-dark" ></i>
+      ) : (
+        <i onClick={() => setIsLight()} class="fa-solid fa-toggle-on toggle-button"></i>
+      )}
+       
+      
       </div>
     </>
   );
