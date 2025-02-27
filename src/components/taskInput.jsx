@@ -26,9 +26,9 @@ const TaskInput = ({ addToTasks, setIsLight, isLight }) => {
       </div>
       {isLight ? (
         
-        <i onClick={() => setIsLight()} class="fa-solid fa-toggle-off toggle-button-dark" ></i>
+        <i onClick={() => setIsLight((prev) => !prev)} className="fa-solid fa-toggle-off toggle-button-dark" ></i>
       ) : (
-        <i onClick={() => setIsLight()} class="fa-solid fa-toggle-on toggle-button"></i>
+        <i onClick={() => setIsLight((prev) => !prev)} className="fa-solid fa-toggle-on toggle-button"></i>
       )}
        
       
