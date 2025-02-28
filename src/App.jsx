@@ -97,7 +97,7 @@ function App() {
 
   const toggleTheme = () => {
     if (isLight) {
-      document.body.style.backgroundColor = "rgb(236, 236, 236)";
+      document.body.style.backgroundColor = "rgb(255, 187, 0)";
     } else {
       document.body.style.backgroundColor = "black";
     }
@@ -107,7 +107,9 @@ function App() {
   return !user ? (
       <>
       <div className='authentication-container'>
-      <p className='signup-message'>Create an account to save data and access from anywhere!</p>
+        <p className='kanban-name'>KANBAN BOARD</p>
+      <p className='signup-message'>Create an account to save data and access from anywhere!</p>\
+      <p className='login-message'>Already have an account?</p>
       <Signup onLogin={handleLogin} />
       <Login onLogin={handleLogin} />
       </div>
@@ -143,11 +145,16 @@ function App() {
           isLight={isLight}
         />
       </div>
-      
+      <footer>
+      <div><p>Ibrahim Karim</p></div>
+      </footer>
     </>
   ) : (
     <>
+     <div className='authentication-container'>
+     <p className='kanban-name'>KANBAN BOARD</p>
       <button onClick={handleLogout} className='logout-button'>Logout</button>
+     </div>
       <div className='droppable-areas-container'>
       <TaskInput 
         addToTasks={addToTasks} 

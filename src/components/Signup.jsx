@@ -26,8 +26,10 @@ const Signup = ({ onLogin }) => {
 
   return (
     <div className='signup-form-container'>
-      <form onSubmit={handleSignup}>
+      <form className='signup-form' onSubmit={handleSignup}>
+        <p className='signup-name'>Signup</p>
         <input
+          className='input-field'
           type='text'
           placeholder='Username'
           onChange={(e) => setUsername(e.target.value)}
@@ -35,6 +37,7 @@ const Signup = ({ onLogin }) => {
           autoComplete='username'
         />
         <input
+          className='input-field'
           type='email'
           placeholder='Email'
           onChange={(e) => setEmail(e.target.value)}
@@ -42,6 +45,7 @@ const Signup = ({ onLogin }) => {
           autoComplete='email'
         />
         <input
+          className='input-field'
           type='password'
           placeholder='Password'
           onChange={(e) => setPassword(e.target.value)}

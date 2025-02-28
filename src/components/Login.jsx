@@ -25,8 +25,10 @@ const Login = ({ onLogin }) => {
 
   return (
     <div className='login-form-container'>
-      <form onSubmit={handleLogin}>
+      <form onSubmit={handleLogin} className='login-form'>
+        <p className='login-name'>Login</p>
         <input
+          className='input-field'
           type='email'
           placeholder='Email'
           onChange={(e) => setEmail(e.target.value)}
@@ -34,6 +36,7 @@ const Login = ({ onLogin }) => {
           autoComplete='email'
         />
         <input
+          className='input-field'
           type='password'
           placeholder='password'
           onChange={(e) => setPassword(e.target.value)}
