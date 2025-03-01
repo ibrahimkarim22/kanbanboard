@@ -157,10 +157,10 @@ function App() {
     <>
      <div className='authentication-container'>
      <p className='kanban-name'>KANBAN BOARD</p>
-     </div>
      <div className='username-area'>
       <button onClick={handleLogout} className='logout-button'>Logout</button>
       <p className='username-name'>{username}</p>
+     </div>
      </div>
       <div className='droppable-areas-container'>
       <TaskInput 

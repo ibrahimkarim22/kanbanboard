@@ -15,7 +15,7 @@
 }
 
 .add-task-button {
-    background-color: rgba(0, 0, 0, 0.224);
+    background-color: rgba(213, 128, 0, 0.84);
     border: none;
     color: rgb(255, 255, 255);
     width: 10vw;
@@ -24,12 +24,14 @@
     text-decoration: none;
     display: inline-block;
     font-size: 1.5vw;
-    box-shadow: black 0px 0px 5px;
+    border: black solid 0.1px;
     border-radius: 15px;
+    font-family: "Poppins", serif;
+    font-weight: 400;
+    font-style: normal;
 }
 
 .add-task-button:hover {
     scale: 1.2;
     cursor: pointer;
-    box-shadow: rgb(0, 255, 0) 0px 0px 5px;
 }
