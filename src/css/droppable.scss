@@ -1,0 +1,90 @@
+.droppable-areas-container {
+    width: auto;
+    height: auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 4fr;
+    gap: 5vw;
+    padding: 20px;
+    /* justify-content: space-around;
+    align-items: center; */
+
+}
+
+.droppable-container-light,
+.droppable-container-dark {
+    display: flex;
+    grid-row: 2;
+    grid-column: 3;
+    flex-direction: column;
+    font-family: 'Courier New', Courier, monospace;
+    /* width: 200px; */
+    /* min-height: 5px;  */
+    justify-content: top;
+    align-items: center;
+    grid-column: auto;
+    color: rgb(0, 0, 0);
+    border-radius: 1vw;
+    border: 0.5px solid rgba(0, 0, 0, 0.564);
+    background-color: rgba(255, 255, 255, 0.454);
+    /* box-shadow: rgb(0, 0, 0) 0px 0px 10px; */
+    font-size: 1vw;
+    font-family: "Montserrat Underline", serif;
+    font-optical-sizing: auto;
+    font-weight: 100;
+    font-style: italic;
+}
+
+
+.droppable-container-dark {
+    color: black;
+    background-color: rgb(255, 255, 255);
+    /* box-shadow: rgb(255, 255, 255) 0px 0px 50px; */
+}
+
+.droppable-container-dark:hover,
+.droppable-container-light:hover {
+    scale: 1.05;
+}
+
+.droppable-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: auto;
+    margin: 10px;
+    padding: 10px;
+    box-shadow: rgb(0, 0, 0) 0px 0px 2px;
+    border: solid 1px rgb(0, 0, 0);
+    background-color: rgb(255, 255, 255);
+    color: black;
+    font-size: 2vw;
+    cursor: grab;
+    border-radius: 5px;
+    font-family: "Edu AU VIC WA NT Guides", serif;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-style: normal;
+
+}
+
+.droppable-item:hover {
+    scale: 1.2;
+}
+
+.delete-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 1vw;
+    border-radius: 50%;
+    height: 3vh;
+    background-color: red;
+    color: white;
+    box-shadow: red 0px 0px 2px;
+}
+
+.delete-button:hover {
+    scale: 1.2;
+    cursor: pointer;
+}

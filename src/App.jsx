@@ -1,4 +1,4 @@
-import './css/app.css';
+import './css/app.scss';
 import { useState, useEffect } from 'react';
 
 import { auth, db } from './firebase';
@@ -18,6 +18,10 @@ function App() {
   const [inProgressTasks, setInProgressTasks] = useState([]);
   const [completedTasks, setCompletedTasks] = useState([]);
   const [isLight, setIsLight] = useState(false);
+
+  useEffect(() => {
+     document.body.style.backgroundColor = "rgb(255, 187, 0)"
+  }, [!user])
 
   useEffect(() => {
     if (user) {
@@ -99,7 +103,7 @@ function App() {
     if (isLight) {
       document.body.style.backgroundColor = "rgb(255, 187, 0)";
     } else {
-      document.body.style.backgroundColor = "black";
+      document.body.style.backgroundColor = "rgb(50, 50, 50)";
     }
     setIsLight(!isLight);
   };
@@ -145,15 +149,18 @@ function App() {
           isLight={isLight}
         />
       </div>
-      <footer>
-      <div><p>Ibrahim Karim</p></div>
+      <footer className='footer'>
+      <p>&#169; Ibrahim Karim</p>
       </footer>
     </>
   ) : (
     <>
      <div className='authentication-container'>
      <p className='kanban-name'>KANBAN BOARD</p>
+     </div>
+     <div className='username-area'>
       <button onClick={handleLogout} className='logout-button'>Logout</button>
+      <p className='username-name'>{username}</p>
      </div>
       <div className='droppable-areas-container'>
       <TaskInput 
@@ -186,6 +193,9 @@ function App() {
           isLight={isLight}
         />
       </div>
+      <footer className='footer'>
+      <p>&#169; Ibrahim Karim</p>
+      </footer>
     </>
   )
 }

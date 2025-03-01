@@ -1,0 +1,39 @@
+@import 'authentication';
+@import 'droppable';
+@import 'tasks';
+
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    overflow-x: hidden;
+}
+
+.toggle-button,
+.toggle-button-dark {
+    cursor: pointer;
+}
+
+.toggle-button {
+    margin-left: 3vw;
+    font-size: 4vw;
+    color: rgb(144, 77, 0);
+}
+
+.toggle-button-dark {
+    margin-left: 3vw;
+    font-size: 4vw;
+    color: rgb(170, 96, 0);
+}
+
+.footer {
+    background-color: rgb(110, 68, 0);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2vw;
+    margin-top: 100px;
+    color: rgb(255, 255, 255);
+    
+    box-shadow: black 0px 0px 10px;
+}
