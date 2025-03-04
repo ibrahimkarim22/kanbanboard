@@ -35,7 +35,7 @@ const DroppableArea = ({ title, tasks, updateList, moveTask, deleteTask, isLight
       onDrop={handleDrop}
       onDragOver={handleDragOver}
     >
-      <h2>{title}</h2>
+      <h2 className='the-title'>{title}</h2>
       {tasks.map((task) => (
         <div
           className='droppable-item'

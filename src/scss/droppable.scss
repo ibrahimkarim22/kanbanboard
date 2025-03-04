@@ -9,12 +9,12 @@
     grid-template-columns: 1fr 1fr 1fr;
     
     gap: 1vw;
-    // padding: 20px;
-    width: 100vw;
+
+    width: auto;
     
     justify-content: center;
+    padding: 0vh 7vw 0vh 7vw;
 
-    
 }
 
 
@@ -23,22 +23,31 @@
 .inprogress-droppable-area,
 .completed-droppable-area {
     
-    display: block;
-    text-align: center;
-    padding: 2vw;
-    
+    display: flex;
+    justify-content: center;
+    // padding: 2vw;
+    // text-align: center;
     // height: auto;
+    border-radius: 1vw;
+}
+
+.the-title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     font-size: 30px;
     font-family: "Montserrat Underline", serif;
     font-optical-sizing: auto;
-    font-weight: 100;
+    font-weight: 400;
     font-style: italic;
-    border-radius: 1vw;
     color: rgb(0, 0, 0);
+    width: auto;
+    min-width: 28vw;
+    height: auto;
+    min-height: 10vh;
 
-
-    
 }
+
 .todo-droppable-area {
     grid-area: todo;
 }
@@ -76,7 +85,6 @@
     ;
     grid-template-columns: 1fr 7fr 1fr 1fr;
     gap: 20px;
-    justify-content: end;
     align-items: center;
     width: auto;
     margin: 22px;
@@ -97,13 +105,21 @@
 .item-name {
     display: flex;
     justify-content: center;
-    
     grid-area: name;
-    font-size: 50px;
+    font-size: 25px;
     font-family: "Edu AU VIC WA NT Guides", serif;
     font-optical-sizing: auto;
     font-weight: 300;
     font-style: normal;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    white-space: normal;
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    
+   
+   
     
 }
 
@@ -121,7 +137,8 @@
     grid-area: previous;
 }
 .move-previous::before, .move-next::before {
-    font-size: 40px;
+    font-size: 20px;
+    font-weight: 900;
     color: white;
     content: '←'
 }
@@ -162,8 +179,12 @@
         ;
         grid-template-columns: 1fr;
     }
-    .delete-button {
-        width: 80%;
+
+    .the-title
+  {
+        width: 100vw;
+        font-size: 22px;
+        min-height: 1vw;
     }
 
     .move-previous::before {
@@ -175,7 +196,7 @@
     }
 
     .move-next::before, .move-previous::before {
-        font-size: 30px;
+        font-size: 18px;
     }
 }
   
@@ -184,11 +205,16 @@
     .todo-droppable-area,
     .inprogress-droppable-area,
     .completed-droppable-area {
-        font-size: 20px;
+        font-size: 28px;
     }
     .droppable-item {
         margin: auto;
         padding: auto;
+    }
+
+    .the-title {
+        font-size: 20px;
+        
     }
     
 }
