@@ -1,6 +1,6 @@
-@import 'authentication';
-@import 'droppable';
-@import 'tasks';
+@use 'authentication';
+@use 'droppable';
+@use 'tasks';
 
 body {
     margin: 0;
@@ -9,22 +9,7 @@ body {
     overflow-x: hidden;
 }
 
-.toggle-button,
-.toggle-button-dark {
-    cursor: pointer;
-}
 
-.toggle-button {
-    margin-left: 3vw;
-    font-size: 4vw;
-    color: rgb(144, 77, 0);
-}
-
-.toggle-button-dark {
-    margin-left: 3vw;
-    font-size: 4vw;
-    color: rgb(170, 96, 0);
-}
 
 .footer {
     background-color: rgb(110, 68, 0);

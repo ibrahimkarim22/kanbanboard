@@ -45,18 +45,17 @@ const DroppableArea = ({ title, tasks, updateList, moveTask, deleteTask, isLight
         >
           {previousList(title) && (
             <button 
-              className='move-button left'
-              onClick={() => moveToList(task, previousList(title))}
-            >←</button>
+              className='move-previous'
+              onClick={() => moveToList(task, previousList(title))}></button>
           )}
+          <div className='item-name'>
           {task}
+          </div>
           {nextList(title) && (
             <button
-              className='move-button right'
+              className='move-next'
               onClick={() => moveToList(task, nextList(title))}
-            >
-              →
-            </button>
+            ></button>
           )}
           
           <button className='delete-button' onClick={() => deleteTask(task)}>X</button>

@@ -21,7 +21,7 @@ const TaskInput = ({ addToTasks, setIsLight, isLight }) => {
           onChange={(e) => setTask(e.target.value)}
         />
       
-      <div >
+      <div className='add-task-button-container'>
         <button className='add-task-button' onClick={handleAddTask}>Add</button>
       </div>
       {isLight ? (

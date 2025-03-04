@@ -30,20 +30,6 @@
     width: 100vw;
 }
 
-@media screen and (max-width: 1400px) { 
-    .authentication-container {
-        grid-template-areas: 
-            'title'
-            'p'
-            'signup'
-            'x'
-            'signin'; 
-        grid-template-columns: 1fr; 
-        gap: 20px; 
-        justify-items: center; 
-    }
-    
-}
 
 .signup-message, .login-message {
     display: flex;
@@ -78,19 +64,11 @@
     box-shadow: rgb(0, 0, 0) 0px 0px 1px;
 }
 
-@media screen and (max-width: 370px) {
-    .signup-form-container, 
-    .login-form-container {
-        width: 200px;
-        height: 200px;
-        padding: 30px;
-    }
-}
 
 .login-form-container {
     grid-area: signin;
     /* margin-bottom: 30px; */
-
+    
     /* grid-row: 2; */
 }
 
@@ -173,4 +151,39 @@
     cursor: pointer;
     scale: 1.1;
 }
+@media screen and (max-width: 1400px) { 
+    .authentication-container {
+        grid-template-areas: 
+        'title'
+        'p'
+        'signup'
+        'x'
+        'signin'; 
+        grid-template-columns: 1fr; 
+        gap: 20px; 
+        justify-items: center; 
+    }
+    
+    .kanban-name {
+        width: 100vw;
+    }
+    
+}
 
+@media screen and (max-width: 370px) {
+    .signup-form-container, 
+    .login-form-container {
+        width: 200px;
+        height: 200px;
+        padding: 30px;
+    }
+}
+
+@media screen and (max-width: 250px) {
+    .signup-form-container, 
+    .login-form-container {
+        width: 100px;
+        height: 180px;
+        padding: 50px;
+    }
+}

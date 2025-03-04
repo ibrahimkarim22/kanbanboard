@@ -1,4 +1,4 @@
-import './css/app.scss';
+import './scss/app.scss';
 import { useState, useEffect } from 'react';
 
 import { auth, db } from './firebase';
