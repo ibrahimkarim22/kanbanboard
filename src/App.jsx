@@ -93,6 +93,16 @@ function App() {
     updateList((prev) => [...prev, task]);
   };
 
+  const moveToList = (task, targetList) => {
+    if (targetList === 'To Do') {
+      moveTask(task, setTasks);
+    } else if (targetList === 'In Progress') {
+      moveTask(task, setInProgressTasks);
+    } else if (targetList === 'Completed') {
+      moveTask(task, setCompletedTasks);
+    }
+  };
+
   const deleteTask = (task) => {
     setTasks((prev) => prev.filter((t) => t !== task));
     setInProgressTasks((prev) => prev.filter((t) => t !== task));
@@ -124,6 +134,7 @@ function App() {
         setIsLight={toggleTheme}
         isLight={isLight}
         />
+        <div className='todo-droppable-area'>
         <DroppableArea
           title='To Do'
           tasks={tasks}
@@ -131,7 +142,10 @@ function App() {
           moveTask={moveTask}
           deleteTask={deleteTask}
           isLight={isLight}
+          moveToList={moveToList}
         />
+        </div>
+        <div className='inprogress-droppable-area'>
         <DroppableArea
           title='In Progress'
           tasks={inProgressTasks}
@@ -139,7 +153,10 @@ function App() {
           moveTask={moveTask}
           deleteTask={deleteTask}
           isLight={isLight}
+          moveToList={moveToList}
         />
+        </div>
+        <div className='completed-droppable-area'>
         <DroppableArea
           title='Completed'
           tasks={completedTasks}
@@ -147,7 +164,9 @@ function App() {
           moveTask={moveTask}
           deleteTask={deleteTask}
           isLight={isLight}
+          moveToList={moveToList}
         />
+        </div>
       </div>
       <footer className='footer'>
       <p>&#169; Ibrahim Karim</p>
@@ -162,12 +181,13 @@ function App() {
       <p className='username-name'>{username}</p>
      </div>
      </div>
-      <div className='droppable-areas-container'>
+     <div className='droppable-areas-container'>
       <TaskInput 
         addToTasks={addToTasks} 
         setIsLight={toggleTheme}
         isLight={isLight}
         />
+        <div className='todo-droppable-area'>
         <DroppableArea
           title='To Do'
           tasks={tasks}
@@ -175,7 +195,10 @@ function App() {
           moveTask={moveTask}
           deleteTask={deleteTask}
           isLight={isLight}
+          moveToList={moveToList}
         />
+        </div>
+        <div className='inprogress-droppable-area'>
         <DroppableArea
           title='In Progress'
           tasks={inProgressTasks}
@@ -183,7 +206,10 @@ function App() {
           moveTask={moveTask}
           deleteTask={deleteTask}
           isLight={isLight}
+          moveToList={moveToList}
         />
+        </div>
+        <div className='completed-droppable-area'>
         <DroppableArea
           title='Completed'
           tasks={completedTasks}
@@ -191,7 +217,9 @@ function App() {
           moveTask={moveTask}
           deleteTask={deleteTask}
           isLight={isLight}
+          moveToList={moveToList}
         />
+        </div>
       </div>
       <footer className='footer'>
       <p>&#169; Ibrahim Karim</p>

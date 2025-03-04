@@ -1,7 +1,4 @@
-
-
-const DroppableArea = ({ title, tasks, updateList, moveTask, deleteTask, isLight }) => {
-
+const DroppableArea = ({ title, tasks, updateList, moveTask, deleteTask, isLight, moveToList }) => {
 
   const handleDragStart = (e, task) => {
     e.dataTransfer.setData('task', task); 
@@ -20,9 +17,21 @@ const DroppableArea = ({ title, tasks, updateList, moveTask, deleteTask, isLight
     e.preventDefault();
   };
 
+  const nextList = (currentTitle) => {
+    if (currentTitle === 'To Do') return 'In Progress';
+    if (currentTitle === 'In Progress') return 'Completed';
+    return null;
+  }
+
+  const previousList = (currentTitle) => {
+    if (currentTitle === 'Completed') return 'In Progress';
+    if (currentTitle === 'In Progress') return 'To Do';
+    return null;
+  }
+
   return (
     <div
-      className={isLight ? 'droppable-container-dark' : 'droppable-container-light'}
+      className={isLight ? 'dark' : 'light'}
       onDrop={handleDrop}
       onDragOver={handleDragOver}
     >
@@ -34,7 +43,21 @@ const DroppableArea = ({ title, tasks, updateList, moveTask, deleteTask, isLight
           draggable
           onDragStart={(e) => handleDragStart(e, task)}
         >
+          {previousList(title) && (
+            <button 
+              className='move-button left'
+              onClick={() => moveToList(task, previousList(title))}
+            >←</button>
+          )}
           {task}
+          {nextList(title) && (
+            <button
+              className='move-button right'
+              onClick={() => moveToList(task, nextList(title))}
+            >
+              →
+            </button>
+          )}
           
           <button className='delete-button' onClick={() => deleteTask(task)}>X</button>
         </div>

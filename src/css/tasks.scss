@@ -1,8 +1,10 @@
 .task-input-container {
     display: flex;
+    grid-area: taskinput;
+    
     justify-content: center;
     align-items: center;
-    grid-column: 1/-1;
+    
 
 
 }
