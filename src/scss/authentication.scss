@@ -16,10 +16,10 @@
 .authentication-container {
     display: grid;
     grid-template-areas: 
-    'title title'
-    'p x'
-    'signup signin'
+    'title title title'
+    'signup z signin'
     ;
+    grid-template-columns: 1fr 1fr 1fr;
     background-color: rgb(110, 68, 0);
     width: auto;
     height: auto;
@@ -33,17 +33,14 @@
 
 .signup-message, .login-message {
     display: flex;
-    justify-content: center;
+    justify-content: start;
     align-items: center;
-    color: aliceblue;
+    color: rgb(0, 0, 0);
     grid-area: p;
     /* padding: 3vh; */
     font-size: 15px;
 }
 
-.login-message {
-    grid-area: x;
-}
 
 
 .signup-form-container,
@@ -67,17 +64,16 @@
 
 .login-form-container {
     grid-area: signin;
-    /* margin-bottom: 30px; */
-    
-    /* grid-row: 2; */
 }
 
 
 .signup-form,
-.login-form {
+.login-form,
+.animation-container {
     display: flex;
     flex-direction: column;
     gap: 5px;
+    padding: 5px;
 }
 
 
@@ -88,7 +84,6 @@
     border-radius: 5px;
     padding: 10px;
     color: rgb(0, 0, 0);
-    /* box-shadow: rgb(0, 0, 0) 0px -0.2px 3px; */
     margin-top: 20px;
 }
 
@@ -104,6 +99,24 @@
 }
 
 
+@keyframes pulse {
+    0% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(0.9); opacity: 0.8; }
+    100% { transform: scale(1); opacity: 1; }
+}
+.animation-container {
+    grid-area: z;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 44px;
+    background-color: rgb(43, 154, 252);
+    animation: pulse 2s infinite;
+}
+
+
+
+
 .input-field {
     background-color: rgba(255, 255, 255, 0.806);
     border: rgb(209, 209, 209) solid 0.5px;
@@ -113,10 +126,7 @@
 
 .login-form-container {
     display: flex;
-    /* grid-column: 1/-1; */
     justify-content: center;
-    /* grid-row: 4; */
-    /* align-items: center; */
 }
 
 .username-area {
@@ -155,9 +165,8 @@
     .authentication-container {
         grid-template-areas: 
         'title'
-        'p'
         'signup'
-        'x'
+        'z'
         'signin'; 
         grid-template-columns: 1fr; 
         gap: 20px; 
@@ -167,6 +176,11 @@
     .kanban-name {
         width: 100vw;
     }
+
+    .animation-container {
+        width: 100px;
+        height: 100px;
+    }
     
 }
 
@@ -174,7 +188,7 @@
     .signup-form-container, 
     .login-form-container {
         width: 200px;
-        height: 200px;
+        height: 300px;
         padding: 30px;
     }
 }
@@ -183,7 +197,7 @@
     .signup-form-container, 
     .login-form-container {
         width: 100px;
-        height: 180px;
+        height: 300px;
         padding: 50px;
     }
 }

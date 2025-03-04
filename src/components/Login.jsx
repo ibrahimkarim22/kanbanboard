@@ -25,6 +25,7 @@ const Login = ({ onLogin }) => {
 
   return (
     <div className='login-form-container'>
+      <p className='login-message'>Already have an account?</p>
       <form onSubmit={handleLogin} className='login-form'>
         <p className='login-name'>Login</p>
         <input

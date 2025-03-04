@@ -122,9 +122,10 @@ function App() {
       <>
       <div className='authentication-container'>
         <p className='kanban-name'>KANBAN BOARD</p>
-      <p className='signup-message'>Create an account to save data and access from anywhere!</p>\
-      <p className='login-message'>Already have an account?</p>
+      
+      
       <Signup onLogin={handleLogin} />
+      <div className='animation-container'></div>
       <Login onLogin={handleLogin} />
       </div>
     
