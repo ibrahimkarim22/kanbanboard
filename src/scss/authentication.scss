@@ -194,7 +194,8 @@
     font-size: 22px;
     color: rgb(255, 255, 255);
     margin: 0;
-    font-family: "Poppins", serif;
+    font-family: "Raleway", sans-serif;
+    font-optical-sizing: auto;
     font-weight: 400;
     font-style: normal;
 }
@@ -255,8 +256,9 @@
         height: 300px;
         padding: 50px;
     }
+
     .signup-button,
-.login-button {
-    font-size: 15px;
-}
+    .login-button {
+        font-size: 15px;
+    }
 }

@@ -26,7 +26,7 @@ const Signup = ({ onLogin }) => {
 
   return (
     <div className='signup-form-container'>
-      <p className='signup-message'>Create an account to save data and access from anywhere!</p>
+      <p className='signup-message'>Create an account to save your data and access it from anywhere!</p>
       <form className='signup-form' onSubmit={handleSignup}>
         <p className='signup-name'>Signup</p>
         <input
