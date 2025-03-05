@@ -20,7 +20,7 @@ function App() {
   const [isLight, setIsLight] = useState(false);
 
   useEffect(() => {
-     document.body.style.backgroundColor = "rgb(255, 187, 0)"
+    document.body.style.backgroundColor = "rgb(0, 238, 255)";
   }, [!user])
 
   useEffect(() => {
@@ -111,119 +111,130 @@ function App() {
 
   const toggleTheme = () => {
     if (isLight) {
-      document.body.style.backgroundColor = "rgb(255, 187, 0)";
+      document.body.style.backgroundColor = "rgb(0, 238, 255)";
     } else {
-      document.body.style.backgroundColor = "rgb(50, 50, 50)";
+      document.body.style.backgroundColor = "rgb(121, 121, 121)";
     }
     setIsLight(!isLight);
   };
 
   return !user ? (
-      <>
+    <>
       <div className='authentication-container'>
         <p className='kanban-name'>KANBAN BOARD</p>
-      
-      
-      <Signup onLogin={handleLogin} />
-      <div className='animation-container'></div>
-      <Login onLogin={handleLogin} />
+
+
+        <Signup onLogin={handleLogin} />
+        <div className='animation-container'>
+          <i className='fa-solid fa-face-laugh-beam face'></i>
+        </div>
+        <Login onLogin={handleLogin} />
       </div>
-    
+
       <div className='droppable-areas-container'>
-      <TaskInput 
-        addToTasks={addToTasks} 
-        setIsLight={toggleTheme}
-        isLight={isLight}
+        <TaskInput
+          addToTasks={addToTasks}
+          setIsLight={toggleTheme}
+          isLight={isLight}
         />
         <div className='todo-droppable-area'>
-        <DroppableArea
-          title='To Do'
-          tasks={tasks}
-          updateList={setTasks}  
-          moveTask={moveTask}
-          deleteTask={deleteTask}
-          isLight={isLight}
-          moveToList={moveToList}
-        />
+          <DroppableArea
+            title='To Do'
+            tasks={tasks}
+            updateList={setTasks}
+            moveTask={moveTask}
+            deleteTask={deleteTask}
+            isLight={isLight}
+            moveToList={moveToList}
+          />
         </div>
         <div className='inprogress-droppable-area'>
-        <DroppableArea
-          title='In Progress'
-          tasks={inProgressTasks}
-          updateList={setInProgressTasks}  
-          moveTask={moveTask}
-          deleteTask={deleteTask}
-          isLight={isLight}
-          moveToList={moveToList}
-        />
+          <DroppableArea
+            title='In Progress'
+            tasks={inProgressTasks}
+            updateList={setInProgressTasks}
+            moveTask={moveTask}
+            deleteTask={deleteTask}
+            isLight={isLight}
+            moveToList={moveToList}
+          />
         </div>
         <div className='completed-droppable-area'>
-        <DroppableArea
-          title='Completed'
-          tasks={completedTasks}
-          updateList={setCompletedTasks}
-          moveTask={moveTask}
-          deleteTask={deleteTask}
-          isLight={isLight}
-          moveToList={moveToList}
-        />
+          <DroppableArea
+            title='Completed'
+            tasks={completedTasks}
+            updateList={setCompletedTasks}
+            moveTask={moveTask}
+            deleteTask={deleteTask}
+            isLight={isLight}
+            moveToList={moveToList}
+          />
         </div>
       </div>
       <footer className='footer'>
-      <p>&#169; Ibrahim Karim</p>
+        <p>&#169; Ibrahim Karim</p>
+        <a href='https://ibrahimkarim-34158.web.app/' target='_blank' className='footer-text'>Portfolio</a>
+        <a href='https://www.linkedin.com/in/ibrahim-karim-abaa952a7/' target='_blank' className='footer-text'>Linkedin</a>
       </footer>
     </>
   ) : (
     <>
-     <div className='authentication-container'>
-     <p className='kanban-name'>KANBAN BOARD</p>
-     <div className='username-area'>
-      <button onClick={handleLogout} className='logout-button'>Logout</button>
-      <p className='username-name'>{username}</p>
-     </div>
-     </div>
-     <div className='droppable-areas-container'>
-      <TaskInput 
-        addToTasks={addToTasks} 
-        setIsLight={toggleTheme}
-        isLight={isLight}
+      <div className='authentication-container'>
+        <p className='kanban-name'>KANBAN BOARD</p>
+        <div className='animation-container'>
+          <i className='fa-solid fa-face-laugh-beam face'></i>
+        </div>
+        <div className='username-area'>
+          <button onClick={handleLogout} className='logout-button'>Logout</button>
+          <p className='username-name'>{username}</p>
+        </div>
+      </div>
+      <div className='droppable-areas-container'>
+        <TaskInput
+          addToTasks={addToTasks}
+          setIsLight={toggleTheme}
+          isLight={isLight}
         />
         <div className='todo-droppable-area'>
-        <DroppableArea
-          title='To Do'
-          tasks={tasks}
-          updateList={setTasks}  
-          moveTask={moveTask}
-          deleteTask={deleteTask}
-          isLight={isLight}
-          moveToList={moveToList}
-        />
+          <DroppableArea
+            title='To Do'
+            tasks={tasks}
+            updateList={setTasks}
+            moveTask={moveTask}
+            deleteTask={deleteTask}
+            isLight={isLight}
+            moveToList={moveToList}
+          />
         </div>
         <div className='inprogress-droppable-area'>
-        <DroppableArea
-          title='In Progress'
-          tasks={inProgressTasks}
-          updateList={setInProgressTasks}  
-          moveTask={moveTask}
-          deleteTask={deleteTask}
-          isLight={isLight}
-          moveToList={moveToList}
-        />
+          <DroppableArea
+            title='In Progress'
+            tasks={inProgressTasks}
+            updateList={setInProgressTasks}
+            moveTask={moveTask}
+            deleteTask={deleteTask}
+            isLight={isLight}
+            moveToList={moveToList}
+          />
         </div>
         <div className='completed-droppable-area'>
-        <DroppableArea
-          title='Completed'
-          tasks={completedTasks}
-          updateList={setCompletedTasks}
-          moveTask={moveTask}
-          deleteTask={deleteTask}
-          isLight={isLight}
-          moveToList={moveToList}
-        />
+          <DroppableArea
+            title='Completed'
+            tasks={completedTasks}
+            updateList={setCompletedTasks}
+            moveTask={moveTask}
+            deleteTask={deleteTask}
+            isLight={isLight}
+            moveToList={moveToList}
+          />
         </div>
       </div>
       <footer className='footer'>
-      <p>&#169; Ibrahim Karim</p>
+
+
+        <p className='footer-text'>&#169; Ibrahim Karim</p>
+        <a href='https://ibrahimkarim-34158.web.app/' target='_blank' className='footer-text'>Portfolio</a>
+        <a href='https://www.linkedin.com/in/ibrahim-karim-abaa952a7/' target='_blank' className='footer-text'>Linkedin</a>
       </footer>
     </>
   )

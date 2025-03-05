@@ -1,15 +1,15 @@
 const DroppableArea = ({ title, tasks, updateList, moveTask, deleteTask, isLight, moveToList }) => {
 
   const handleDragStart = (e, task) => {
-    e.dataTransfer.setData('task', task); 
+    e.dataTransfer.setData('task', task);
   };
 
   const handleDrop = (e) => {
     e.preventDefault();
-    const task = e.dataTransfer.getData('task'); 
+    const task = e.dataTransfer.getData('task');
 
-    if (!tasks.includes(task)) { 
-      moveTask(task, updateList); 
+    if (!tasks.includes(task)) {
+      moveTask(task, updateList);
     }
   };
 
@@ -44,12 +44,12 @@ const DroppableArea = ({ title, tasks, updateList, moveTask, deleteTask, isLight
           onDragStart={(e) => handleDragStart(e, task)}
         >
           {previousList(title) && (
-            <button 
+            <button
               className='move-previous'
               onClick={() => moveToList(task, previousList(title))}></button>
           )}
           <div className='item-name'>
-          {task}
+            {task}
           </div>
           {nextList(title) && (
             <button
@@ -57,7 +57,7 @@ const DroppableArea = ({ title, tasks, updateList, moveTask, deleteTask, isLight
               onClick={() => moveToList(task, nextList(title))}
             ></button>
           )}
-          
+
           <button className='delete-button' onClick={() => deleteTask(task)}>X</button>
         </div>
       ))}

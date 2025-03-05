@@ -2,16 +2,16 @@
     width: auto;
     height: auto;
     display: grid;
-    grid-template-areas: 
-    'taskinput taskinput taskinput'
-    'todo inprogress completed'
+    grid-template-areas:
+        'taskinput taskinput taskinput'
+        'todo inprogress completed'
     ;
     grid-template-columns: 1fr 1fr 1fr;
-    
+
     gap: 1vw;
 
     width: auto;
-    
+
     justify-content: center;
     padding: 0vh 7vw 0vh 7vw;
 
@@ -22,13 +22,14 @@
 .todo-droppable-area,
 .inprogress-droppable-area,
 .completed-droppable-area {
-    
+
     display: flex;
     justify-content: center;
     // padding: 2vw;
     // text-align: center;
     // height: auto;
     border-radius: 1vw;
+
 }
 
 .the-title {
@@ -80,8 +81,8 @@
 
 .droppable-item {
     display: grid;
-    grid-template-areas: 
-    'previous name delete next'
+    grid-template-areas:
+        'previous name delete next'
     ;
     grid-template-columns: 1fr 7fr 1fr 1fr;
     gap: 20px;
@@ -95,7 +96,7 @@
     color: black;
     cursor: grab;
     border-radius: 5px;
-    
+
 }
 
 .droppable-item:hover {
@@ -117,14 +118,14 @@
     max-width: 100%;
     overflow: hidden;
     text-overflow: ellipsis;
-    
-   
-   
-    
+
+
+
+
 }
 
 
-.move-previous, 
+.move-previous,
 .move-next {
     display: flex;
     background-color: rgb(0, 136, 255);
@@ -136,7 +137,9 @@
 .move-previous {
     grid-area: previous;
 }
-.move-previous::before, .move-next::before {
+
+.move-previous::before,
+.move-next::before {
     font-size: 20px;
     font-weight: 900;
     color: white;
@@ -146,13 +149,14 @@
 .move-next {
     grid-area: next;
 }
+
 .move-next::before {
     content: '→'
 
 }
 
 .delete-button {
-    
+
     display: flex;
     grid-area: delete;
     justify-content: center;
@@ -169,19 +173,18 @@
     cursor: pointer;
 }
 
-@media screen and (max-width: 1400px) { 
+@media screen and (max-width: 1400px) {
     .droppable-areas-container {
-        grid-template-areas: 
-        'taskinput'
-        'todo'
-        'inprogress'
-        'completed'
+        grid-template-areas:
+            'taskinput'
+            'todo'
+            'inprogress'
+            'completed'
         ;
         grid-template-columns: 1fr;
     }
 
-    .the-title
-  {
+    .the-title {
         width: 100vw;
         font-size: 22px;
         min-height: 1vw;
@@ -195,18 +198,21 @@
         content: '↓';
     }
 
-    .move-next::before, .move-previous::before {
+    .move-next::before,
+    .move-previous::before {
         font-size: 18px;
     }
 }
-  
+
 @media screen and (max-width: 700px) {
+
     .item-name,
     .todo-droppable-area,
     .inprogress-droppable-area,
     .completed-droppable-area {
         font-size: 28px;
     }
+
     .droppable-item {
         margin: auto;
         padding: auto;
@@ -214,9 +220,9 @@
 
     .the-title {
         font-size: 20px;
-        
+
     }
-    
+
 }
 
 @media screen and (max-width: 300px) {

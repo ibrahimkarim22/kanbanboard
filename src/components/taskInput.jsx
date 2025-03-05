@@ -1,10 +1,10 @@
-import { useState } from "react";
+import { useState } from 'react';
 
 const TaskInput = ({ addToTasks, setIsLight, isLight }) => {
-  const [task, setTask] = useState("");
+  const [task, setTask] = useState('');
 
   const handleAddTask = () => {
-    if (task.trim() === "") return;
+    if (task.trim() === '') return;
     addToTasks(task);
     setTask("");
   };
@@ -22,7 +22,7 @@ const TaskInput = ({ addToTasks, setIsLight, isLight }) => {
         />
       
       <div className='add-task-button-container'>
-        <button className='add-task-button' onClick={handleAddTask}>Add</button>
+        <button className='add-task-button' onClick={handleAddTask}>ADD</button>
       </div>
       {isLight ? (
         

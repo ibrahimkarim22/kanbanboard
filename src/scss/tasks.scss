@@ -1,9 +1,9 @@
 .task-input-container {
     display: grid;
     grid-area: taskinput;
-   grid-template-areas: 
-   'input but toggle'
-   ;
+    grid-template-areas:
+        'input but toggle'
+    ;
     justify-content: center;
     align-items: center;
     gap: 20px;
@@ -12,28 +12,31 @@
 }
 
 .task-input {
-    
+
     grid-area: input;
     width: 400px;
     height: 70px;
-    background-color: rgb(0, 238, 255);
+    background-color: rgb(241, 163, 255);
+    font-size: 22px;
+    color: rgb(0, 77, 243);
 }
+
 .add-task-button-container {
-    
+
     display: flex;
     grid-area: but;
     justify-content: center;
 }
 
 .add-task-button {
-    background-color: rgba(213, 128, 0, 0.84);
+    background-color: rgba(0, 179, 219, 0.84);
     color: rgb(255, 255, 255);
     width: auto;
     height: auto;
     font-size: 40px;
     border: black solid 0.1px;
     border-radius: 1px;
-    font-family: "Poppins", serif;
+    font-family: "Raleway", serif;
     font-weight: 400;
     font-style: normal;
 }
@@ -50,31 +53,35 @@
     justify-content: center;
     cursor: pointer;
     font-size: 70px;
-    color: rgb(144, 77, 0);
+    color: rgb(0, 38, 144);
 }
 
 .toggle-button-dark {
-    
-    color: rgb(170, 96, 0);
+
+    color: rgb(255, 255, 255);
 }
+
 @media screen and (max-width: 700px) {
     .task-input-container {
-    
-        grid-template-areas: 
-        'input'
-        'but'
-        'toggle'
-        ; 
+
+        grid-template-areas:
+            'input'
+            'but'
+            'toggle'
+        ;
     }
+
     .task-input {
         width: 200px;
         height: 50px;
     }
+
     .add-task-button {
         font-size: 30px;
     }
+
     .toggle-button,
     .toggle-button-dark {
         font-size: 40px;
     }
-    }
+}
