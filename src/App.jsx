@@ -121,7 +121,7 @@ function App() {
   return !user ? (
     <>
       <div className='authentication-container'>
-        <p className='kanban-name'>KANBAN BOARD</p>
+        <p className='kanban-name'>Tuh-Doo</p>
 
 
         <Signup onLogin={handleLogin} />
@@ -172,7 +172,7 @@ function App() {
         </div>
       </div>
       <footer className='footer'>
-        <p>&#169; Ibrahim Karim</p>
+          <p className='footer-text'>&#169; 2025 Ibrahim Karim</p>
         <a href='https://ibrahimkarim-34158.web.app/' target='_blank' className='footer-text'>Portfolio</a>
         <a href='https://www.linkedin.com/in/ibrahim-karim-abaa952a7/' target='_blank' className='footer-text'>Linkedin</a>
       </footer>
@@ -232,7 +232,7 @@ function App() {
       <footer className='footer'>
 
 
-        <p className='footer-text'>&#169; Ibrahim Karim</p>
+        <p className='footer-text'>&#169; 2025 Ibrahim Karim</p>
         <a href='https://ibrahimkarim-34158.web.app/' target='_blank' className='footer-text'>Portfolio</a>
         <a href='https://www.linkedin.com/in/ibrahim-karim-abaa952a7/' target='_blank' className='footer-text'>Linkedin</a>
       </footer>

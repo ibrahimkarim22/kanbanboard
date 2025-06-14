@@ -39,7 +39,7 @@ const Login = ({ onLogin }) => {
         <input
           className='input-field'
           type='password'
-          placeholder='password'
+          placeholder='Password'
           onChange={(e) => setPassword(e.target.value)}
           required
           autoComplete='current-password'

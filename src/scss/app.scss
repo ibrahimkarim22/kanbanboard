@@ -25,13 +25,17 @@ body {
 }
 
 .footer-text {
-    font-family: "Raleway", sans-serif;
+    font-family: "Poppins", sans-serif;
     font-optical-sizing: auto;
-    font-weight: 400;
-    font-style: normal;
-    font-size: 20px;
+    font-weight: 300;
+    font-style: italic;
+    font-size: 15px;
+    text-decoration: none;
 }
 
+.footer-text:hover {
+    scale: 1.1;
+}
 .links {
     display: flex;
     flex-direction: column;
